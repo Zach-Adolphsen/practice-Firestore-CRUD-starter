@@ -41,5 +41,5 @@ testem.log
 .DS_Store
 Thumbs.db
 
-#
+# App component files
 src/app/app.config.ts
