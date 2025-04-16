@@ -16,30 +16,39 @@
       placeholder="Email"
     />
   </div>
-
+  @if (editUserId) {
+  <button class="btn btn-outline-primary mx-3" (click)="updateUser()">
+    Update User
+  </button>
+  <button class="btn btn-outline-secondary mx-3" (click)="resetForm()">
+    Cancel
+  </button>
+  } @if (!editUserId) {
   <div>
-    <button class="btn btn-outline-primary" (click)="addUser()">
+    <button class="btn btn-outline-primary my-2" (click)="addUser()">
       Add User
     </button>
   </div>
+  }
   <hr />
   <div>
     <h2>List of Users</h2>
-    <!-- @for (User of users; track $index) {
-    <div class="card">
-      <div class="card-title">
-        <h3>{{ User.name }}</h3>
+    @for (user of users; track $index) {
+    <div class="card my-2">
+      <div class="card-title mx-3">
+        <h3>{{ user.name }}</h3>
       </div>
       <div class="card-body">
-        <p>{{ User.email }}</p>
-        <button class="btn btn-outline-danger" (click)="updateUser(User)">
+        <p>Email: {{ user.email }}</p>
+        <p>ID: {{ user.id }}</p>
+        <button class="btn btn-danger mx-2" (click)="deleteUser(user.id)">
           Delete User
         </button>
-        <button class="btn btn-outline-success" (click)="editUser(User)">
+        <button class="btn btn-success mx-2" (click)="setEditUser(user)">
           Edit User
         </button>
       </div>
     </div>
-    } -->
+    }
   </div>
 </div>

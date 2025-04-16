@@ -43,7 +43,7 @@ export class UserService {
   // It uses AngularFire's doc function to get a reference to the new user document
 
   addUser(newUser: User) {
-    const userRef = doc(this.firestore, `users/${newUser.id}`);
+    const userRef = doc(this.userCollection);
     newUser.id = userRef.id;
     setDoc(userRef, newUser);
   }
