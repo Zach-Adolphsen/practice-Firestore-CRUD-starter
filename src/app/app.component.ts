@@ -28,7 +28,7 @@ export class AppComponent {
 
   // This is the hook method that will be called when the component is initialized
   ngOnInit(){
-   
+   this.userService.getUsers().subscribe
   }
 
 
