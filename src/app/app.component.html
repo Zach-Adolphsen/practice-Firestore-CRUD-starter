@@ -23,13 +23,14 @@
   <button class="btn btn-outline-secondary mx-3" (click)="resetForm()">
     Cancel
   </button>
-  } @if (!editUserId) {
+  } @else{
   <div>
     <button class="btn btn-outline-primary my-2" (click)="addUser()">
       Add User
     </button>
   </div>
   }
+
   <hr />
   <div>
     <h2>List of Users</h2>
